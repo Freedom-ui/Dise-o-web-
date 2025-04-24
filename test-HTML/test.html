@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML TEST</title>
+    <link rel="icon" href="assets/favicon2.png" type="image/png">
+    <style>
+        button {
+            transition: all 0.2s ease-in-out;
+        }
+
+        button:hover {
+            transform: scale(1.02);
+            cursor: pointer;
+        }
+
+        input {
+            border: none;
+            background-color: white;
+            transition: all 0.1s ease-in-out;
+        }
+
+        input:focus {
+            background-color: white;
+        }
+
+        @font-face {
+            font-family: 'Champions-Bold';
+            src: url('fonts/Champions-Bold.ttf') format('truetype');
+        }
+        
+    </style>
+</head>
+
+<body style=" display: flex; justify-content: center; flex-direction: column; align-items: center; width: 100%; background-image: url(assets/champions_back.jpg); background-size: cover; font-family: Champions-Bold;  font-size: 15px;">
+    
+    <h1 style="text-align: center; text-shadow: 0px 0px 10px black; color:hwb(0 97% 3%); font-size: 50px;">Goleadores UCL</h1>
+    <div style="text-align: center;">
+        <table
+            style="margin-top: auto; color: hwb(0 97% 3%); background-color: rgba(0, 0, 0,0.2); border-radius: 10px; font-family: Champions-Bold;">
+            <thead>
+                <tr style="text-shadow: 0px 0px 10px black;">
+                    <th style="text-align: center; font-size: x-large;">Nombre</th>
+                    <th style="text-align: center; font-size: x-large;">Club</th>
+                    <th style="text-align: center; font-size: x-large;">Goles</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="text-shadow: 0px 0px 20px black">
+
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td><input style="border-radius: 4px;border: 2px solid; font-family: Champions-Bold;" type="text"></td>
+                    <td><input style="border-radius: 4px;border: 2px solid; font-family: Champions-Bold;" type="text"></td>
+                    <td><input style="border-radius: 4px;border: 2px solid; font-family: Champions-Bold;" type="text"></td>
+                    <td><button
+                            style="border: 2px solid; background-color: white; padding: 6px 10px; border-radius: 10px; font-size: 16px; display:inline-block; text-decoration: none; text-align: center; font-family: Champions-Bold;"
+                            onclick="add()">Añadir jugador</button></td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</body>
+<script>
+    window.onload = () => {
+        clear()
+    }
+
+    function add() {
+        var a = document.getElementsByTagName('input')[0].value
+        var b = document.getElementsByTagName('input')[1].value
+        var c = document.getElementsByTagName('input')[2].value
+
+        var table = document.getElementsByTagName('tbody')[0]
+        var row = table.insertRow()
+        var cell = row.insertCell()
+        row.setAttribute("style", "text-shadow: 0px 0px 20px black")
+        cell.innerHTML = a
+        cell.setAttribute("style", "text-shadow: 0px 0px 20px black")
+        cell = row.insertCell()
+        cell.innerHTML = b
+        cell = row.insertCell()
+        cell.innerHTML = c
+
+        clear()
+    }
+
+    function clear() {
+        document.getElementsByTagName('input')[0].value = ''
+        document.getElementsByTagName('input')[1].value = ''
+        document.getElementsByTagName('input')[2].value = ''
+        document.getElementsByTagName('input')[0].focus()
+    }
+</script>
+
+</html>
