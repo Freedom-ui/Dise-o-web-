@@ -23,7 +23,3 @@ fetch("https://681c31086ae7c794cf70edef.mockapi.io/api/Alumnos/Alumnos")
             tbody.appendChild(fila);
         });
     })
-    .catch((error) => {
-        console.error("Hubo un error en la consulta:", error);
-        alert("Error al consultar la API. Revisá la consola para más detalles.");
-    });
